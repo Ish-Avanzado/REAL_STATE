@@ -1,0 +1,344 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Truculenta:opsz,wght@12..72,100..900&display=swap");
+
+/* -------------RESETS------------- */
+/*Resets are used for overwriting default html tag properties*/
+:root {
+  --font: "Poppins", sans-serif;
+  --clr-dark: #2c3333;
+  --clr-light: #fff;
+  --clr-primary: #192f57;
+  --clr-secondary: #4668a5;
+  --h1: clamp(3rem, 10vw, 5rem);
+  --h2: clamp(2.8rem, 10vw, 4rem);
+  --h3: clamp(2rem, 10vw, 2.5rem);
+  --h4: clamp(1.5rem, 10vw, 2rem);
+  --h5: clamp(0.8rem, 10vw, 1rem);
+  --h6: clamp(0.5rem, 10vw, 0.8rem);
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  border: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+  scroll-behavior: smooth;
+  list-style: none;
+}
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+body {
+  color: var(--clr-dark);
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  overflow-x: hidden;
+  line-height: 1.4;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+article,
+aside,
+footer,
+header,
+nav,
+section,
+time {
+  display: block;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+
+/* ------CONTAINER---------------- */
+
+.container {
+  max-width: 120rem;
+  width: 100%;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+
+/* --------------HEADER--------------- */
+.header {
+  background-color: var(--clr-light);
+  padding: 3rem 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: relative;
+}
+
+.header .header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .header__nav {
+  display: flex;
+  gap: 3rem;
+}
+
+.header .header__nav li a {
+  color: var(--clr-dark);
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.header .header__nav li a:hover {
+  color: var(--clr-secondary);
+}
+
+/* Home BANNER */
+
+.homeBanner {
+  padding-top: 10rem;
+  background: url(/img/INDEX-BANNER.png);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.homeBanner h1 {
+  font-size: var(--h1);
+  font-weight: bold;
+  color: var(--clr-primary);
+  max-width: 60rem;
+}
+
+/* PROPERTIES */
+
+.homeProperties {
+  padding: 7rem 0;
+  background-color: var(--clr-secondary);
+}
+
+.homeProperties .homeProperties__title {
+  text-align: center;
+  color: var(--clr-light);
+  margin-bottom: 3rem;
+}
+
+.homeProperties .homeProperties__title h2 {
+  font-size: var(--h2);
+  font-weight: bold;
+}
+
+.homeProperties .homeProperties__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+}
+
+/* HOMEABOUT */
+
+.homeAbout {
+    padding: 7rem 0;
+}
+
+.homeAbout .homeAbout__wrapper {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.homeAbout .homeAbout__text  h2 {
+    font-size: var(--h2);
+    font-weight: bold;
+}
+
+.homeAbout .homeAbout__text p {
+    margin: 2rem 0;
+}
+
+/* FOOTER */
+
+.footer {
+    padding: 3rem 0;
+    background: var(--clr-primary);
+    color: var(--clr-light);
+}
+
+/* -------------------ABOUT PAGE-------------- */
+
+.aboutBanner  {
+    background: url(/img/about.png);
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+}
+
+.aboutBanner h1 {
+    font-size: var(--h1);
+    font-weight: bold;
+    max-width: 60rem;
+    padding-top: 7rem;
+}
+
+.aboutBanner p  {
+    max-width: 60rem;
+    margin: 5rem 0;
+}
+
+/* ----------------REPEATABLE PATTERNS------ */
+
+.btn {
+  display: inline-block;
+  color: transparent;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  padding: 1.3rem 2rem;
+}
+
+.btn.btn--primary {
+  color: var(--clr-light);
+  background-color: var(--clr-primary);
+  transition: all 0.5s ease;
+}
+
+.btn.btn--primary:hover {
+  color: var(--clr-primary);
+  background-color: var(--clr-light);
+  border: 1px solid var(--clr-primary);
+  transition: all 0.5s ease;
+}
+
+.card {
+  background-color: var(--clr-light);
+}
+.card img {
+  width: 100%;
+}
+
+.card__text {
+  padding: 1.5rem;
+}
+
+.card__text--title h3 {
+  font-size: var(--h3);
+  font-weight: bold;
+}
+
+.card__text--info {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.card__text--info tr {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.card__text--info h4 {
+  font-weight: bold;
+}
+
+.card__text--info tr:last-child{
+    margin-top: 2rem;
+}
+
+.testimonial {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+}
+
+.testimonial .testimonial__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+
+.testimonial .testimonial__text  h2{
+    font-size: var(--h2);
+    font-weight: bold;
+    max-width: 40rem;
+    margin: 2rem 0;
+}
+
+.testimonial .testimonial__text  p  {
+    max-width: 52rem;
+}
+
+.testimonial .testimonial__text h3  {
+    font-size: var(--h3);
+    font-weight: bold;
+    margin-top: 4rem;
+}
