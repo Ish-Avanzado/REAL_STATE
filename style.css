@@ -12,7 +12,7 @@
   --h2: clamp(2.8rem, 10vw, 4rem);
   --h3: clamp(2rem, 10vw, 2.5rem);
   --h4: clamp(1.5rem, 10vw, 2rem);
-  --h5: clamp(0.8rem, 10vw, 1rem);
+  --h5: clamp(1rem, 10vw, 1.8rem);
   --h6: clamp(0.5rem, 10vw, 0.8rem);
 }
 
@@ -361,6 +361,7 @@ img {
   width: 100%;
   padding: 1.5rem 2.5rem;
   border-radius: 1rem;
+  border: 1px solid var(--clr-dark);
 }
 
 .contact .contact__form textarea {
@@ -410,6 +411,73 @@ img {
 
 .propertiesSelection .propertiesSelection__item--info a {
   color: var(--clr-dark);
+}
+
+/* PROPERTIES RIVERSIDE */
+.propertiesInfo {
+  padding: 7rem 0;
+}
+
+.propertiesInfo .propertiesInfo__wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 10rem;
+}
+
+.propertiesInfo .propertiesInfo__details h2 {
+  font-size: var(--h2);
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.propertiesInfo .propertiesInfo__details img {
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.propertiesInfo .propertiesInfo__details p {
+  text-align: justify;
+}
+
+.propertiesInfo .propertiesInfo__post--form h4{
+ font-size: var(--h4);
+ font-weight: bold;
+ margin-bottom: 1rem;
+}
+
+.propertiesInfo .propertiesInfo__post--form form {
+  display: flex;
+  gap: 2rem;
+}
+
+.propertiesInfo .propertiesInfo__post--form input{
+  height: 5rem;
+  width: 35rem;
+}
+
+.propertiesInfo .propertiesInfo__post--form small {
+  font-size: 1.5rem;
+}
+
+.propertiesInfo h3 {
+  font-size: var(--h3);
+  font-weight: bold;
+  margin-top: 7rem;
+}
+
+.propertiesInfo .propertiesInfo__post--popularPost {
+  display: flex;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.propertiesInfo .propertiesInfo__post--popularPost h5 {
+  font-size: var(--h5);
+  font-weight: bold;
+}
+
+.propertiesInfo .propertiesInfo__post--popularPost p {
+  margin: 1rem 0;
 }
 /* ----------------REPEATABLE PATTERNS------ */
 
