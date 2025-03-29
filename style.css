@@ -8,12 +8,12 @@
   --clr-light: #fff;
   --clr-primary: #192f57;
   --clr-secondary: #4668a5;
-  --h1: clamp(3rem, 10vw, 5rem);
-  --h2: clamp(2.8rem, 10vw, 4rem);
-  --h3: clamp(2rem, 10vw, 2.5rem);
-  --h4: clamp(1.5rem, 10vw, 2rem);
-  --h5: clamp(1rem, 10vw, 1.8rem);
-  --h6: clamp(0.5rem, 10vw, 0.8rem);
+  --h1: clamp(3.5rem, 6vw, 5rem);
+  --h2: clamp(2.8rem, 6vw, 4rem);
+  --h3: clamp(2rem, 6vw, 2.5rem);
+  --h4: clamp(1.5rem, 6vw, 2rem);
+  --h5: clamp(1rem, 6vw, 1.8rem);
+  --h6: clamp(0.5rem, 6vw, 0.8rem);
 }
 
 * {
@@ -165,6 +165,87 @@ img {
   color: var(--clr-secondary);
 }
 
+.header .toggle__menu{
+  display: none;
+}
+.header .toggle__menu span{
+  content: "";
+  width: 4rem;
+  height: 0.5rem;
+  background-color: var(--clr-primary);
+  display: block;
+  border: 1px solid var(--clr-primary);
+  border-radius: 3rem;
+}
+
+.header .toggle__menu span:nth-child(2){
+  margin: 0.5rem 0;
+}
+
+.header .header__nav.open,
+.header .cta.open{
+  right: 0;
+  transition: all 0.5 ease;
+}
+
+.header .toggle__menu.open span:nth-child(2) {
+  opacity: 0;
+  transition: all 0.5 ease;
+}
+.header .toggle__menu.open span:first-child {
+  transform: translate(1px, 12px) rotate(-225deg);
+  transition: all 0.5 ease;
+}
+.header .toggle__menu.open span:last-child {
+  transform: translate(-1px, -8px) rotate(225deg);
+  transition: all 0.5 ease;
+}
+
+
+@media screen and (max-width:500px) {
+  .header {
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+  }
+  .header .header__nav
+  {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 13rem;
+    right: -100rem;
+    width: 50%;
+    height: 100vh;
+    background: var(--clr-light);
+    align-items: center;
+    padding-top: 10rem;
+    transition: all 0.5 ease;
+    z-index: 6;
+  }
+
+  .header .cta{
+    position: absolute;
+    top: 50rem;
+    right: -100rem;
+    z-index: 6;
+  }
+
+  .header .toggle__menu{
+    display: block;
+  }
+
+  .backdrop.open {
+    display: block;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+
 /* Home BANNER */
 
 .homeBanner {
@@ -180,6 +261,16 @@ img {
   font-weight: bold;
   color: var(--clr-primary);
   max-width: 60rem;
+}
+
+@media screen and (max-width:500px){
+  .homeBanner {
+    height: 60vh;
+    padding-top: 17rem;
+  }
+  .homeBanner h1 {
+    max-width: 40rem;
+  }
 }
 
 /* PROPERTIES */
@@ -206,6 +297,16 @@ img {
   gap: 5rem;
 }
 
+@media screen and (max-width:500px){
+  .homeProperties {
+    padding: 5rem 0;
+  }
+  .homeProperties .homeProperties__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
 /* HOMEABOUT */
 
 .homeAbout {
@@ -227,12 +328,28 @@ img {
   margin: 2rem 0;
 }
 
+@media screen and (max-width:500px){
+  .homeAbout {
+    padding: 5rem 0;
+  }
+  .homeAbout .homeAbout__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}
 /* FOOTER */
 
 .footer {
   padding: 3rem 0;
   background: var(--clr-primary);
   color: var(--clr-light);
+}
+
+@media screen and (max-width:500px){
+  .footer p {
+    font-size: 1rem;
+    text-align: center;
+  }
 }
 
 /* -------------------ABOUT PAGE-------------- */
@@ -255,7 +372,18 @@ img {
   max-width: 60rem;
   margin: 5rem 0;
 }
-
+@media screen and (max-width:500px){
+  .aboutBanner {
+    height: 70vh;
+    padding-top: 17rem;
+  }
+  .aboutBanner h1 {
+    padding-top: 3rem;
+  }
+  .aboutBanner p {
+    margin: 2rem 0;
+  }
+}
 /* OFFER */
 .offer {
   background: var(--clr-light);
@@ -265,6 +393,7 @@ img {
 .offer h2 {
   text-align: center;
   font-size: var(--h2);
+  font-weight: bold;
 }
 
 .offer p {
@@ -278,7 +407,8 @@ img {
 .offer .offer__item {
   background: #b8baba;
   color: var(--clr-dark);
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   align-items: center;
   gap: 3rem;
   margin-bottom: 3rem;
@@ -296,6 +426,28 @@ img {
 .offer .offer__info p {
   margin-top: 3rem;
   text-align: justify;
+}
+
+@media  screen and (max-width:500px) {
+  .offer {
+    padding: 5rem 0;
+    margin:  0 auto;
+  }
+  .offer .offer__item {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    text-align: center;
+  }
+  .offer .offer__item img {
+    width: 50rem;
+  }
+  .offer .offer__wrapper {
+    margin: 3rem 0;
+  }
+  .offer .offer__info {
+    margin-right: 0;
+  }
 }
 
 /* CONTACT */
@@ -376,6 +528,34 @@ img {
   font-size: 1.8rem;
 }
 
+@media screen and (max-width:500px) {
+  .contact {
+    padding: 17rem 0 5rem;
+  }
+  
+  .contact .contact__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+  .contact .contact__detail h2,
+  .contact .contact__detail p{
+    text-align: center;
+    margin: 0 auto;
+    padding: 1rem 0;
+  }
+  
+  .contact .contact__info {
+    margin: 0 auto;
+  }
+  .contact .contact__form form {
+    margin: 0 auto;
+  }
+  .contact .contact__form a {
+    margin-top: 2rem;
+  }
+}
+
 /* PROPERTIES */
 
 .propertiesSelection {
@@ -412,7 +592,27 @@ img {
 .propertiesSelection .propertiesSelection__item--info a {
   color: var(--clr-dark);
 }
+.propertiesSelection .propertiesSelection__item--info a:hover {
+  color: var(--clr-secondary);
+  font-weight: 600;
+  transition: all 0.5s ease;
+}
 
+@media screen and (max-width:500px){
+  .propertiesSelection {
+    padding-top: 17rem;
+  }
+  .propertiesSelection .propertiesSelection__wrapper h2 {
+    margin-bottom: 3rem;
+  }
+  .propertiesSelection .propertiesSelection__item {
+    display: flex;
+    flex-direction: column;
+  }
+  .propertiesSelection .propertiesSelection__item--info p {
+    margin: 1rem 0;
+  }
+}
 /* PROPERTIES RIVERSIDE */
 .propertiesInfo {
   padding: 7rem 0;
@@ -478,6 +678,18 @@ img {
 
 .propertiesInfo .propertiesInfo__post--popularPost p {
   margin: 1rem 0;
+}
+
+@media screen and (max-width:500px) {
+  .propertiesInfo {
+    padding-top: 17rem;
+  }
+  .propertiesInfo .propertiesInfo__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 6rem;
+  }
+  
 }
 /* ----------------REPEATABLE PATTERNS------ */
 
@@ -564,4 +776,18 @@ img {
   font-size: var(--h3);
   font-weight: bold;
   margin-top: 4rem;
+}
+
+@media screen and (max-width:500px) {
+  .testimonial {
+    padding: 5rem 0;
+  }
+  .testimonial .testimonial__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+  .testimonial img {
+    display: none;
+  }
 }
