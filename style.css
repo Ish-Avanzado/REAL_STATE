@@ -187,6 +187,10 @@ img {
   right: 0;
   transition: all 0.5 ease;
 }
+.header .cta.open{
+  left: 26rem;
+  transition: all 0.5 ease;
+}
 
 .header .toggle__menu.open span:nth-child(2) {
   opacity: 0;
@@ -226,7 +230,7 @@ img {
 
   .header .cta{
     position: absolute;
-    top: 50rem;
+    top: 45rem;
     right: -100rem;
     z-index: 6;
   }
@@ -265,7 +269,7 @@ img {
 
 @media screen and (max-width:500px){
   .homeBanner {
-    height: 60vh;
+    height: 80vh;
     padding-top: 17rem;
   }
   .homeBanner h1 {
